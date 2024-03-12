@@ -1,1 +1,2 @@
 # ELEC0138-Group-R
+The social engineering attack tool in kali linux system was used to create https://stackoverflow.com/的钓鱼网站副本 and map the connection stackaverflow.com to the copy of this phishing website via ngrok, send the stackaverflow.com URL to the attacked person and when he enters his account and password, the backend can obtain the account and password, and the webpage will automatically jump back to the original website.
