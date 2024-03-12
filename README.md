@@ -3,7 +3,7 @@
 The attack that our group implemented was a phishing site.
 Phishing sites are fraudulent tactics designed to impersonate legitimate websites in order to trick users into entering sensitive information such as usernames, passwords, credit card details, and so on. These sites typically lure victims into visiting them by sending emails, text messages or other communications that appear to be from a trusted source. Links in the emails or messages may appear to point to legitimate websites, but actually lead to spoofed websites that may visually resemble the real site in order to deceive users
 
-In order to obtain similar URLs, we used dnatwist to obtain the available domains among the similar domains.
+In order to obtain similar URLs, we used dnstwist to obtain the available domains among the similar domains.
 ![屏幕截图(250)](https://github.com/Zzzyii/ELEC0138-Group-R/assets/85960806/4b46e2b0-8063-4973-a373-c1badf0a01b2)
 stackaverflow.com
 
