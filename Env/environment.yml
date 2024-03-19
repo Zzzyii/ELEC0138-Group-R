@@ -1,0 +1,10 @@
+name: security
+
+dependencies:
+  - python=3.10.6
+  - numpy=1.26.0
+  - matplotlib=3.5.3
+  - seaborn=0.12.2
+  - pip
+  - pip:
+    - -r requirements.txt
