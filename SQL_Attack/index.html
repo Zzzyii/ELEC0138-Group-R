@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
+        .container { max-width: 300px; margin: auto; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type="text"], input[type="password"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        input[type="submit"] { background-color: #007bff; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        .footer { margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>login your account</h2>
+    <form action="login.php" method="post">
+        <div>
+            <label for="username">username:</label><br />
+            <input type="text" id="username" name="username" required />
+        </div>
+        <div>
+            <label for="password">password:</label><br />
+            <input type="password" id="password" name="password" />
+        </div>
+        <div>
+            <input type="submit" value="login" />
+        </div>
+    </form>
+    <div class="footer">
+        <a href="register.php">sign up</a> | <a href="#">forget password?</a>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    
+    if (error) {
+        const container = document.querySelector('.container');
+        const errorMessage = document.createElement('div');
+        errorMessage.style.color = 'red';
+        errorMessage.style.textAlign = 'center';
+        errorMessage.style.marginBottom = '15px';
+        errorMessage.textContent = 'Fail to connect, please check your username and password';
+        container.insertBefore(errorMessage, container.firstChild);
+    }
+}
+</script>
