@@ -89,14 +89,66 @@ When you open the extension, go to the URL you want to visit, the URL will be au
 Click on the home screen plug-in, you will be able to see the status of the current visit to the site, and can view and clearly detect the history.
 ![v3 - frame at 0m54s](https://github.com/Zzzyii/ELEC0138-Group-R/assets/85960806/550c2f4c-f43b-4d9e-a7da-5f4abbb505c3)![v3 - frame at 1m20s](https://github.com/Zzzyii/ELEC0138-Group-R/assets/85960806/e4e7a348-11e5-42ae-bf9e-6aafb0c75ce1)
 
-# SQL Injection
+
+# SQL Injection and Defence
+
 ## Overview
 In the face of rising cyber threats, especially SQL injection attacks, it has become critical to ensure the security and integrity of data. SQL injection is a common at-tack technique where attackers manipulate database operations by injecting malicious SQL commands. To deal with this situation, we have designed and implemented an efficient defence system that maintains operational security by using prepared statements to protect database interactions from SQL injection attacks.
-## File：
-SQL_Attack: This file contains codes for sql injection attack.
-SQL_Defense: This file contains codes for sql injection defense.
+
+## Components
+- `index.html`: Website homepage
+- `login.php`: Handle user login using MySQL
+- `logout.php`: Handle user logout
+- `register.php`:Handle user register using MySQL
+- `welcome.php`: Company's internal website
+  
+## Installation
+
+### Requirements
+The project is deployed and verified on `Ubuntu`, in principle all other platforms can run, you need to install:
+- Apache
+- MySQL
+- Php
+
+### Setup
+1. Clone the repository to your local machine.
+2. Update your Ubuntu system. Open a terminal and run the following command:
+  - `sudo apt update`
+  - `sudo apt upgrade`
+3. Install Apache:
+  - `sudo apt install apache2` This project uses Apache as a web server.
+4. Install MySQL:
+  - `sudo apt install mysql-server` This project uses MySQL as the database server.
+5. Install PHP and the MySQL extension for PHP.
+  - `sudo apt install php libapache2-mod-php php-mysql`
+6. Restart the Apache service to apply the changes
+  - `sudo systemctl restart apache2`
+
 ## Usage
-To use this project:
-1. Start by  downloading the files.
-2. Use the file SQL_Attack to set up a server and mysql in Ubuntu, then enter SQL injection statements in the input field, you will find you can successfully inject .
-3. Use the file SQL_Defense to set up a server and mysql in Ubuntu, then enter SQL injection statements in the input field, you will find you fail to inject.
+1. Create a database in MySQL for testing purposes.
+2. Create a user and grant them access to the newly created database.
+3. reate a test table within the database and insert some test data.
+4. Put all file in `/var/www/html`.
+5. Go to `http://localhost/` in your browser and you should now see a login screen.
+
+### Attack
+As mentioned above, we have created a simple login form page, and the form authenticates the login by matching the username and password entered by the user against the records in the database. Now, we can try to perform an SQL injection on that web.
+
+#### SQL Injection Testing
+  - ‘Always True’ Injection
+Entering `'1'='1` in the Username and Password window constructs an SQL query that, if the site has an SQL injection vulnerability, will cause the condition '1'='1' to be true whenever it is true, bypassing authentication.
+
+  - ‘Commenting Out the Rest’ Injection
+You can try to comment out the rest of the SQL statement by adding a comment symbol to the input. Type `admin' --` for the username. This will cause the part that checks for the password to be commented out, thus bypassing authentication.
+
+### Defense
+After discovering SQL injection vulnerabilities on your website, you should take immediate steps to fix these vulnerabilities.
+Replace all file in defense into the `/var/www/html` path.
+Return to your browser and you will see that the above injection was unsuccessful.
+
+Key defences include:
+  - Use Prepared Statements:
+Ensure that all SQL queries use parameterised queries, this avoids embedding user input directly into the SQL statement.
+  - Use an ORM (Object-Relational Mapping) framework:
+These frameworks often provide a more secure way to handle database queries, reducing the need to write SQL directly.
+
