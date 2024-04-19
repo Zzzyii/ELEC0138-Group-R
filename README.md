@@ -98,5 +98,5 @@ SQL_Defense: This file contains codes for sql injection defense.
 ## Usage
 To use this project:
 1. Start by  downloading the files.
-2. Use the file SQL_Attack to set up a server and mysql, then enter SQL injection statements in the input field, you will find you can successfully inject .
-3. Use the file SQL_Defense to set up a server and mysql, then enter SQL injection statements in the input field, you will find you fail to inject.
+2. Use the file SQL_Attack to set up a server and mysql in Ubuntu, then enter SQL injection statements in the input field, you will find you can successfully inject .
+3. Use the file SQL_Defense to set up a server and mysql in Ubuntu, then enter SQL injection statements in the input field, you will find you fail to inject.
