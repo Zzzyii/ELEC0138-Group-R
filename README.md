@@ -88,3 +88,15 @@ When you open the extension, go to the URL you want to visit, the URL will be au
 
 Click on the home screen plug-in, you will be able to see the status of the current visit to the site, and can view and clearly detect the history.
 ![v3 - frame at 0m54s](https://github.com/Zzzyii/ELEC0138-Group-R/assets/85960806/550c2f4c-f43b-4d9e-a7da-5f4abbb505c3)![v3 - frame at 1m20s](https://github.com/Zzzyii/ELEC0138-Group-R/assets/85960806/e4e7a348-11e5-42ae-bf9e-6aafb0c75ce1)
+
+# SQL Injection
+## Overview
+In the face of rising cyber threats, especially SQL injection attacks, it has become critical to ensure the security and integrity of data. SQL injection is a common at-tack technique where attackers manipulate database operations by injecting malicious SQL commands. To deal with this situation, we have designed and implemented an efficient defence system that maintains operational security by using prepared statements to protect database interactions from SQL injection attacks.
+## File：
+SQL_Attack: This file contains codes for sql injection attack.
+SQL_Defense: This file contains codes for sql injection defense.
+## Usage
+To use this project:
+1. Start by  downloading the files.
+2. Use the file SQL_Attack to set up a server and mysql, then enter SQL injection statements in the input field, you will find you can successfully inject .
+3. Use the file SQL_Defense to set up a server and mysql, then enter SQL injection statements in the input field, you will find you fail to inject.
